@@ -11,7 +11,7 @@ build-backend = "setuptools.build_meta"  # backend used for buidling the package
 [project]
 name = "nomad-battery-database"  # name of the project
 description = "app for battery database"  # short discription of project
-version = "0.1.0"  # project verison
+dynamic = ["version"]  # version will be set dynamically using setuptools-scm
 readme = "README.md"  # path to readme file
 requires-python = ">=3.9"  # minimum required python version
 license = { file = "LICENSE" }  # license file
@@ -139,3 +139,5 @@ app_entry_point = "nomad_battery_database.apps:battery_app"
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
 skip = [".github/*"]
+
+[tool.setuptools_scm]
